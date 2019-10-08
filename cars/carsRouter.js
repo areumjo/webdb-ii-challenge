@@ -44,4 +44,35 @@ router.post('/', (req, res) => {
         });
 });
 
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+    db('cars').where({ id }).del()
+        .then(car => {
+            if (car) {
+                res.status(200).json(car);
+            } else {
+                res.status(404).json({ message: 'invalid car id' });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Failed to delete a car'})
+        })
+});
+
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const updated = req.body;
+    db('cars').where({ id }).update(updated)
+        .then(car => {
+            if (car) {
+                res.status(200).json({ updated: car })
+            } else {
+                res.status(404).json({ message: 'invalid car id' })
+            }
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Failed to update a car'})
+        })
+});
+
 module.exports = router;
