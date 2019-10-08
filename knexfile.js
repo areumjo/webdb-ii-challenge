@@ -7,7 +7,13 @@ module.exports = {
     connection: {
       filename: './dev.sqlite3'
     }, // change this to the name you want your db (like car-dealer.db3)
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
+  }
   },
 
   // staging: {

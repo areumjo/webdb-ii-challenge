@@ -4,9 +4,9 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('cars', tbl => {
       tbl.increments();
       tbl.decimal('VIN').unique().notNullable();
-      tbl.string('make');
-      tbl.string('model');
-      tbl.decimal('mileage');
+      tbl.string('make').notNullable();
+      tbl.string('model').notNullable();
+      tbl.decimal('mileage').notNullable();
   })
 };
 
