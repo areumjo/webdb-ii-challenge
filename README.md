@@ -31,6 +31,8 @@ npm install helmet
 npm install -g knex
 npm install knex sqlite3
 knex init
+knex migrate:make car-schema
+knex migrate:latest
 ```
 
 ## Specifications

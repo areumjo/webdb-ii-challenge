@@ -6,7 +6,7 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: './dev.sqlite3'
-    },
+    }, // change this to the name you want your db (like car-dealer.db3)
     useNullAsDefault: true
   },
 
