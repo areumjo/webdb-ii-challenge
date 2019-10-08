@@ -24,6 +24,14 @@ Follow these steps for completing your project.
 - Configure `knex` to connect to a `/data/car-dealer.db3` database using the `sqlite3` npm module.
 - Write endpoints to support `CREATE` and `READ` operations on the `cars` resource.
 - Use a rest client like _Insomnia_ or _Postman_ to test your API.
+- Command line
+```bash
+npm install express
+npm install helmet
+npm install -g knex
+npm install knex sqlite3
+knex init
+```
 
 ## Specifications
 
